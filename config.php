@@ -14,14 +14,13 @@ session_start();
 
 require_once('../../wfo_facet_secrets.php'); // things we don't put in github
 
-// create and initialise the database connection
-$mysqli = new mysqli($db_host, $db_user, $db_password, $db_database);  
-
-// connect to the database
-if ($mysqli->connect_error) {
-  echo $mysqli->connect_error;
-}
-
-if (!$mysqli->set_charset("utf8mb4")) {
-  echo printf("Error loading character set utf8: %s\n", $mysqli->error);
-}
+/*
+  We set the error handler to convert errors to exceptions
+  so that we can use try and catch which is better for 
+  calling files.
+*/
+set_error_handler(
+  function ($severity, $message, $file, $line) {
+      throw new ErrorException($message, $severity, $severity, $file, $line);
+  }
+);

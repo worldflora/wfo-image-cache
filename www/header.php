@@ -11,6 +11,8 @@
     rel="stylesheet" 
     integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" 
     crossorigin="anonymous">
+
+    <script src="js/main.js"></script>
     
     <!-- no reason for people to find this by searching -->
     <meta name="robots" content="noindex">

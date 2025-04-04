@@ -50,8 +50,6 @@ function render_image($path_parts){
         exit;
     }
 
-
-
     // size can be max or w,h or ,h or w,
     // an exercise for the reader is to combine these regex into one!
     if(
