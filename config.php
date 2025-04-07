@@ -12,7 +12,7 @@ error_reporting(E_ALL & ~E_DEPRECATED & ~E_STRICT);
 //error_reporting(E_ALL);
 session_start();
 
-require_once('../../wfo_facet_secrets.php'); // things we don't put in github
+// require_once('../../wfo_facet_secrets.php'); // things we don't put in github
 
 /*
   We set the error handler to convert errors to exceptions
