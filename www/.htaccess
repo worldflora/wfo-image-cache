@@ -4,6 +4,7 @@ RewriteEngine On
 # RewriteCond %{REQUEST_URI} !^/.+/ 
 
 RewriteCond %{REQUEST_URI} !^/js/main.js 
+RewriteCond %{REQUEST_URI} !^/download_results.php
 
 #everything else goes to index.php
 RewriteRule !index\.php$ index.php [L]
