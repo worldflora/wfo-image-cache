@@ -146,8 +146,8 @@ function render_image($path_parts){
 
 
     if($file_path && file_exists($file_path)){
-//        header('Content-Type: image/jpeg');
-        if(@$_GET['download'] == 'true') header('Content-Disposition: attachment');
+        header('Content-Type: image/jpeg');
+        if(isset($_GET['download']) &&  $_GET['download'] == 'true') header('Content-Disposition: attachment');
         readfile($file_path);
     }else{
         print_r($path_parts);
