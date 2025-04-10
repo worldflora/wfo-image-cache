@@ -5,6 +5,9 @@ define('WFO_FILE_CACHE', '../data/images/'); // end in a slash
 // the derivative image sizes supported are these max dimensions
 define('WFO_IMAGE_HEIGHTS', array(150, 500, 1000)); 
 
+// we need the location of the facet server because we use it to login
+define('WFO_FACET_SERVER', 'https://wfo-facets.rbge.info/'); // end in slash
+//define('WFO_FACET_SERVER', 'http://localhost:3030/'); // end in slash
 
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);

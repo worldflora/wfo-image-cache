@@ -1,11 +1,6 @@
 <?php
 require_once('../config.php');
 require_once('../includes/WfoImageCache.php');
-require_once('header.php');
-
-
-
-
 
 if(@$_POST){
 
@@ -18,7 +13,6 @@ if(@$_POST){
     render_forms();
 }
 
-require_once('footer.php');
 
 function process_single_image(){
 
@@ -175,12 +169,12 @@ if(file_exists($out_file_path)){
     echo "<p><strong>Output: </strong><a href=\"download_results.php\">Download annotated version of last CSV file</a>.<p>";
 }
 
+$user = $_SESSION['image_cache_user'];
+
 ?>
-
-
-
 <hr/>
-
+<p><a href="/login?logout=true">Log out</a></p>
+<hr/>
 
 <p>
 </p>

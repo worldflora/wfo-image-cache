@@ -8,18 +8,27 @@ require_once('../includes/WfoImageCache.php');
 $path_parts = explode('/', parse_url($_SERVER["REQUEST_URI"],  PHP_URL_PATH));
 array_shift($path_parts); // lose the first always blank one
 
+// routing table
 if($path_parts[0] == 'server' ){
-    // we are viewing a name or taxon
+    // this is a request for an image so it is served without any authentication
     require_once('iiif_server.php');
+}elseif(!isset($_SESSION['image_cache_user']) || $path_parts[0] == 'login'){
+    // anything beyond an image request they must have authentication
+    require_once('header.php');
+    require_once('login.php');
+    require_once('footer.php');
 }elseif($path_parts[0] == 'upload' ){
     require_once('upload_progress.php');
 }elseif($path_parts[0] == 'js' ){
     // allow javascript server directly
+    // this is in .htaccess on live but needed here for dev
     return false;
 }elseif($path_parts[0] == 'download_results.php' ){
-    // download
+    // download - this is in .htaccess on live but needed here for dev
     return false;
 }else{
     // all else fails render the home page
+    require_once('header.php');
     require_once('manage.php');
+    require_once('footer.php');
 }
