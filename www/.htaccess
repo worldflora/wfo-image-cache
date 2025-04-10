@@ -6,7 +6,5 @@ RewriteEngine On
 RewriteCond %{REQUEST_URI} !^/js/main.js
 RewriteCond %{REQUEST_URI} !^/download_results.php
 
-RewriteCond %{REQUEST_URI} ^/remote_login$
-
 #everything else goes to index.php
 RewriteRule !index\.php$ index.php [L]
