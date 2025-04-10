@@ -173,7 +173,7 @@ $user = $_SESSION['image_cache_user'];
 
 ?>
 <hr/>
-<p><a href="/login?logout=true">Log out</a></p>
+<p><a href="/remote?logout=true">Log out</a></p>
 <hr/>
 
 <p>

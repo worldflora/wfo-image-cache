@@ -15,7 +15,7 @@ if($path_parts[0] == 'server' ){
 }elseif(!isset($_SESSION['image_cache_user']) || $path_parts[0] == 'remote'){
     // anything beyond an image request they must have authentication
     require_once('header.php');
-    require_once('remote.php');
+    require_once('login.php');
     require_once('footer.php');
 }elseif($path_parts[0] == 'upload' ){
     require_once('upload_progress.php');
