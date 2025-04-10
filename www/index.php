@@ -12,10 +12,10 @@ array_shift($path_parts); // lose the first always blank one
 if($path_parts[0] == 'server' ){
     // this is a request for an image so it is served without any authentication
     require_once('iiif_server.php');
-}elseif(!isset($_SESSION['image_cache_user']) || $path_parts[0] == 'login'){
+}elseif(!isset($_SESSION['image_cache_user']) || $path_parts[0] == 'remote_login'){
     // anything beyond an image request they must have authentication
     require_once('header.php');
-    require_once('login.php');
+    require_once('remote_login.php');
     require_once('footer.php');
 }elseif($path_parts[0] == 'upload' ){
     require_once('upload_progress.php');
